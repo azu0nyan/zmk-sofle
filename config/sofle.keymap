@@ -78,7 +78,7 @@
 
             sensor-bindings =
                 <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>,
-                <&inc_dec_kp TAB RS(TAB)>;
+                <&inc_dec_kp LS(TAB) TAB>;
         };
 
         lower_layer {
@@ -95,7 +95,7 @@
             bindings = <
 &kp GRAVE  &kp F1    &kp F2             &kp F3  &kp F4     &kp F5                        &kp F6     &kp F7     &kp F8            &kp F9             &kp F10               &kp F11
 &kp ENTER  &kp N1    &kp N2             &kp N3  &kp N4     &kp N5                        &kp N6     &kp N7     &kp N8            &kp N9             &kp N0                &kp F12
-&trans     &kp LEFT  &kp DOWN           &kp UP  &kp RIGHT  &kp INSERT                    &kp LEFT   &kp DOWN   &kp UP            &kp RIGHT          &kp HOME              &kp END
+&to 4      &kp LEFT  &kp DOWN           &kp UP  &kp RIGHT  &kp INSERT                    &kp LEFT   &kp DOWN   &kp UP            &kp RIGHT          &kp HOME              &kp END
 &trans     &trans    &trans             &trans  &trans     &trans      &trans    &trans  &kp MINUS  &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp NON_US_BACKSLASH  &trans
                      &layaer2taptoggle  &trans  &trans     &trans      &trans    &trans  &trans     &trans     &trans            &trans
             >;
@@ -144,14 +144,16 @@
             >;
         };
 
-        layer_4 {
+        NUMPAD {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &kp N7  &kp N8  &kp N9   &kp MINUS     &kp FSLH                        &kp N7  &kp N8  &kp N9   &kp MINUS     &kp FSLH      &trans
+&trans  &kp N4  &kp N5  &kp N6   &kp LS(PLUS)  &kp LS(STAR)                    &kp N4  &kp N5  &kp N6   &kp LS(PLUS)  &kp LS(STAR)  &trans
+&trans  &kp N1  &kp N2  &kp N3   &kp RET       &trans                          &kp N1  &kp N2  &kp N3   &kp RET       &trans        &trans
+&trans  &kp N0  &kp N0  &kp DOT  &kp RET       &trans        &trans    &trans  &kp N0  &kp N0  &kp DOT  &kp RET       &trans        &trans
+                &to 0   &trans   &trans        &trans        &trans    &trans  &trans  &trans  &trans   &to 0
             >;
+
+            label = "NUM¾";
         };
     };
 };
